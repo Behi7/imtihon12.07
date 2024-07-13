@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+	{% load static %}
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- Fonts-->
+		<link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome/font-awesome.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'fonts/pe-icon/pe-icon.css' %}">
+		<!-- Vendors-->
+		<link rel="stylesheet" type="text/css" href="{% static 'vendors/bootstrap/grid.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'vendors/magnific-popup/magnific-popup.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'vendors/swiper/swiper.css' %}">
+		<!-- App & fonts-->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,600|Playfair+Display:400i">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	</head>
+	
+	<body>
+				
+				<!-- preload -->
+				<div class="preload" id="preload">
+					<div class="cssload-spin-box"></div>
+				</div><!-- End / preload -->
+				
+		<div class="page-wrap">
+			
+			<!-- header -->
+			<header class="header header-fixheight header--fixed">
+				<div class="container">
+					<div class="header__inner">
+						<div class="header-logo"><a href="home.html"><img src="{% static 'img/logo_white.png' %}" alt=""/></a></div>
+						
+						<!-- raising-nav -->
+						<nav class="raising-nav">
+							
+							<!-- raising-menu -->
+							<ul class="raising-menu">
+								<li class="current"><a href="#id1">Uy</a>
+								</li>
+								<li><a href="#id3">xizmat</a>
+								</li>
+								<li><a href="#id4">galereya</a>
+								</li>
+								<li><a href="#id5">guvohlik</a>
+								</li>
+								<li><a href="#id6">jamoa</a>
+								</li>
+								<li><a href="#id7">Biz bilan bog'lanish</a>
+								</li>
+							</ul><!-- raising-menu -->
+							
+							<div class="navbar-toggle"><i class="fa fa-bars"></i></div>
+						</nav><!-- End / raising-nav -->
+						
+						<div class="btn-right">
+							<div class="search-btn"><i class="fa fa-search"></i></div>
+						</div>
+						<div class="searchbar">
+							<div class="searchbar__group"><span class="searchbar__addon"><i class="fa fa-search"></i></span>
+								<input class="searchbar__input" type="text" name="search" value="" placeholder="Search"/><span class="searchbar__close"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header><!-- End / header -->
+			
+			<!-- Content-->
+			<div class="md-content">
+				
+				<!-- hero -->
+				<hero class="hero" id="id1">
+					
+					<!-- swiper swiper-container -->
+					<div class="swiper swiper-container">
+						<div class="swiper-wrapper">
+							{% for home in homes %}
+							<div class="hero__wrapper" style="background-image: url('{{home.image.url}}');">
+								<div class="hero__inner">
+									<div class="container">
+										<h1 class="hero__title">{{home.title}}</h1>
+										<p class="hero__desc">{{home.body}}</p>
+										
+										<!-- btn -->
+										<a class="btn btn-primary" href="#">Tugma
+										</a><!-- End / btn -->
+										
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						<div class="swiper-pagination-custom"></div>
+						<div class="swiper-button-custom">
+							<div class="swiper-button-prev-custom"><i class="fa fa-angle-left"></i></div>
+							<div class="swiper-button-next-custom"><i class="fa fa-angle-right"></i></div>
+						</div>
+					</div><!-- End / swiper swiper-container -->
+				</hero><!-- End / hero -->
+				<!-- cta-02 -->
+				<div class="cta-02">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-9 ">
+								<h3 class="cta-02__title">Loyihangiz uchun yuqori sifatli konstruktor kompaniyasini qidiryapsizmi?</h3>
+							</div>
+							<div class="col-lg-3  md-text-right">
+								
+								<!-- btn -->
+								<a class="btn btn-outline" href="#">Tugmani bosing
+								</a><!-- End / btn -->
+								
+							</div>
+						</div>
+					</div>
+				</div><!-- End / cta-02 -->
+				
+				
+				<!-- Section -->
+				<!-- End / Section -->
+				<!-- Section -->
+				<section class="md-section" id="id3">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-2 ">
+								<!-- sec-title -->
+								<div class="sec-title sec-title__lg-title md-text-center">
+									<h2 class="sec-title__title">Bizning xizmatlarimiz</h2><span class="sec-title__divider"></span>
+								</div><!-- End / sec-title -->
+								
+							</div>
+						</div>
+						<div class="row row-eq-height">
+							{% for servic in services %}
+							<div class="col-sm-6 col-md-6 col-lg-4 ">
+								<!-- services -->
+								<div class="services">
+									<div class="services__img"><img src="{{ servic.image.url }}" alt=""/></div>
+									<h2 class="services__title"><a href="#">{{ servic.title }}</a></h2>
+									<div class="services__desc">{{servic.info}}</div>
+									
+									<!-- btn -->
+									<a class="btn btn btn-primary btn-custom" href='service-single.html'>read more
+									</a><!-- End / btn -->
+									
+								</div><!-- End / services -->
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="md-section" id="id4" style="background-color:#fff">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-2 ">
+								
+								<!-- sec-title -->
+								<div class="sec-title sec-title__lg-title md-text-center">
+									<h2 class="sec-title__title">Galereya</h2><span class="sec-title__divider"></span>
+								</div><!-- End / sec-title -->
+								
+							</div>
+						</div>
+						
+						<!-- gallery-wrap -->
+						<div class="gallery-wrap gallery-album">
+							<div class="grid-css grid-css--grid" data-col-lg="4" data-col-md="2" data-col-sm="2" data-col-xs="1" data-gap="30">
+								<div class="grid__inner">
+									<div class="grid-sizer"></div>
+									
+									<!-- grid-item -->
+									<div class="grid-item large">
+										<div class="grid-item__inner">
+											<div class="grid-item__content-wrapper">
+												
+												<!-- gallery -->
+												<div class="gallery gallery--grid">
+													<div class="gallery__image bg-image" style="background-image: url('{% static "img/gallery/9.jpg" %}');"><img src="{% static 'img/gallery/9.jpg' %}" alt="How to Create and"/><a class="gallery__overlay mfp-image" href="{% static 'img/gallery/9.jpg' %}" data-effect="mfp-zoom-in" title="Design a Perfect">
+															<div class="md-tb">
+																<div class="md-tb__cell md-text-center"><i class="fa fa-search"></i></div>
+															</div></a>
+													</div>
+												</div><!-- End / gallery -->
+												
+											</div>
+										</div>
+									</div><!-- End / grid-item -->
+									
+									
+									<!-- grid-item -->
+									<div class="grid-item wide">
+										<div class="grid-item__inner">
+											<div class="grid-item__content-wrapper">
+												
+												<!-- gallery -->
+												<div class="gallery gallery--grid">
+													<div class="gallery__image bg-image" style="background-image: url('{% static "img/gallery/10.jpg" %}');"><img src="{% static 'img/gallery/10.jpg' %}" alt="How to Master"/><a class="gallery__overlay mfp-image" href="{% static 'img/gallery/10.jpg' %}" data-effect="mfp-zoom-in" title="Using Memes in Your">
+															<div class="md-tb">
+																<div class="md-tb__cell md-text-center"><i class="fa fa-search"></i></div>
+															</div></a>
+													</div>
+												</div><!-- End / gallery -->
+												
+											</div>
+										</div>
+									</div><!-- End / grid-item -->
+									
+									
+									<!-- grid-item -->
+									<div class="grid-item">
+										<div class="grid-item__inner">
+											<div class="grid-item__content-wrapper">
+												
+												<!-- gallery -->
+												<div class="gallery gallery--grid">
+													<div class="gallery__image bg-image" style="background-image: url('{% static "img/gallery/11.jpg" %}');"><img src="{% static 'img/gallery/11.jpg' %}" alt="7 UI Choices That"/><a class="gallery__overlay mfp-image" href="{% static 'img/gallery/11.jpg' %}" data-effect="mfp-zoom-in" title="Free PSD Files">
+															<div class="md-tb">
+																<div class="md-tb__cell md-text-center"><i class="fa fa-search"></i></div>
+															</div></a>
+													</div>
+												</div><!-- End / gallery -->
+												
+											</div>
+										</div>
+									</div><!-- End / grid-item -->
+									
+									
+									<!-- grid-item -->
+									<div class="grid-item">
+										<div class="grid-item__inner">
+											<div class="grid-item__content-wrapper">
+												
+												<!-- gallery -->
+												<div class="gallery gallery--grid">
+													<div class="gallery__image bg-image" style="background-image: url('{% static "img/gallery/12.jpg" %}');"><img src="{% static 'img/gallery/12.jpg' %}" alt="Using Memes in Your"/><a class="gallery__overlay mfp-image" href="{% static 'img/gallery/12.jpg' %}" data-effect="mfp-zoom-in" title="Is UX Really That">
+															<div class="md-tb">
+																<div class="md-tb__cell md-text-center"><i class="fa fa-search"></i></div>
+															</div></a>
+													</div>
+												</div><!-- End / gallery -->
+												
+											</div>
+										</div>
+									</div><!-- End / grid-item -->
+									
+									
+									<!-- grid-item -->
+									<div class="grid-item">
+										<div class="grid-item__inner">
+											<div class="grid-item__content-wrapper">
+												
+												<!-- gallery -->
+												<div class="gallery gallery--grid">
+													<div class="gallery__image bg-image" style="background-image: url('{% static "img/gallery/13.jpg" %}');"><img src="{% static 'img/gallery/13.jpg' %}" alt="How To Build A"/><a class="gallery__overlay mfp-image" href="{% static 'img/gallery/13.jpg' %}" data-effect="mfp-zoom-in" title="Free Sketch Plugins">
+															<div class="md-tb">
+																<div class="md-tb__cell md-text-center"><i class="fa fa-search"></i></div>
+															</div></a>
+													</div>
+												</div><!-- End / gallery -->
+												
+											</div>
+										</div>
+									</div><!-- End / grid-item -->
+									
+									
+									<!-- grid-item -->
+									<div class="grid-item">
+										<div class="grid-item__inner">
+											<div class="grid-item__content-wrapper">
+												
+												<!-- gallery -->
+												<div class="gallery gallery--grid">
+													<div class="gallery__image bg-image" style="background-image: url('{% static "img/gallery/14.jpg" %}');"><img src="{% static 'img/gallery/14.jpg' %}" alt="Using Memes in Your"/><a class="gallery__overlay mfp-image" href="{% static 'img/gallery/14.jpg' %}" data-effect="mfp-zoom-in" title="How to Create and">
+															<div class="md-tb">
+																<div class="md-tb__cell md-text-center"><i class="fa fa-search"></i></div>
+															</div></a>
+													</div>
+												</div><!-- End / gallery -->
+												
+											</div>
+										</div>
+									</div><!-- End / grid-item -->
+									
+									
+									<!-- grid-item -->
+									<div class="grid-item large">
+										<div class="grid-item__inner">
+											<div class="grid-item__content-wrapper">
+												
+												<!-- gallery -->
+												<div class="gallery gallery--grid">
+													<div class="gallery__image bg-image" style="background-image: url('{% static "img/gallery/1.jpg" %}');"><img src="{% static 'img/gallery/1.jpg' %}" alt="Is UX Really That"/><a class="gallery__overlay mfp-image" href="{% static 'img/gallery/1.jpg' %}" data-effect="mfp-zoom-in" title="How to Master">
+															<div class="md-tb">
+																<div class="md-tb__cell md-text-center"><i class="fa fa-search"></i></div>
+															</div></a>
+													</div>
+												</div><!-- End / gallery -->
+												
+											</div>
+										</div>
+									</div><!-- End / grid-item -->
+									
+									
+									<!-- grid-item -->
+									<div class="grid-item wide">
+										<div class="grid-item__inner">
+											<div class="grid-item__content-wrapper">
+												
+												<!-- gallery -->
+												<div class="gallery gallery--grid">
+													<div class="gallery__image bg-image" style="background-image: url('{% static "img/gallery/2.jpg" %}');"><img src="{% static 'img/gallery/2.jpg' %}" alt="Getting Started with"/><a class="gallery__overlay mfp-image" href="{% static 'img/gallery/2.jpg' %}" data-effect="mfp-zoom-in" title="The Essential Guide">
+															<div class="md-tb">
+																<div class="md-tb__cell md-text-center"><i class="fa fa-search"></i></div>
+															</div></a>
+													</div>
+												</div><!-- End / gallery -->
+												
+											</div>
+										</div>
+									</div><!-- End / grid-item -->
+									
+								</div>
+							</div>
+						</div><!-- End / gallery-wrap -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="md-section" id="id5">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-2 ">
+								
+								<!-- sec-title -->
+								<div class="sec-title sec-title__lg-title md-text-center">
+									<h2 class="sec-title__title">Guvohlar</h2><span class="sec-title__divider"></span>
+								</div><!-- End / sec-title -->
+								
+							</div>
+						</div>
+						
+						<!-- swiper swiper-container -->
+						<div class="swiper swiper-container" data-options='{"slidesPerView":3,"spaceBetween":30,"breakpoints":{"600":{"slidesPerView":1},"991":{"slidesPerView":2,"spaceBetween":30}}}'>
+							<div class="swiper-wrapper">
+								{% for testimonial in testemonials %}
+								<div class="testimonial-item">
+									<!-- quote -->
+									<blockquote class="quote">
+										<p>{{ testimonial.comment }}</p>
+									</blockquote><!-- End / quote -->
+									
+									
+									<!-- authorbox -->
+									<div class="authorbox">
+										<div class="authorbox__avartar" style="background-image: url({{ testimonial.img.url }});"><img src="{{ testemonial.img.url }}" alt=""/></div>
+										<div class="authorbox__info">
+											<h5 class="authorbox__name">{{ testimonial.name }}</h5>
+										</div>
+									</div><!-- End / authorbox -->
+								</div>
+								{% endfor %}
+							</div>
+						</div><!-- End / swiper swiper-container -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="md-section md-skin-dark" id="id6" style="background-image:url('{% static "img/bg/demo.jpg" %}');padding-bottom:50px;">
+					<div class="md-overlay"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-2 ">
+								
+								<!-- sec-title -->
+								<div class="sec-title sec-title__lg-title md-text-center">
+									<h2 class="sec-title__title">Our team</h2><span class="sec-title__divider"></span>
+								</div><!-- End / sec-title -->
+								
+							</div>
+						</div>
+						<div class="row">
+							{% for team in teams %}
+							<div class="col-sm-6 col-md-6 col-lg-3 ">
+								
+								<!-- team -->
+								<div class="team">
+									<div class="team__img"><img src="{{ team.image.url }}" alt=""/>
+										<div class="team__overlay">
+											<div class="md-tb">
+												<div class="md-tb__cell md-text-center">
+																	{% if team.facebook %}
+																	<!-- social-icon -->
+																	<a class="social-icon social-icon__style-03" href="{{team.facebook}}"><i class="social-icon__icon fa fa-facebook"></i>
+																	</a><!-- End / social-icon -->
+																	{% endif %}
+																	{% if team.twiter %}
+																	<!-- social-icon -->
+																	<a class="social-icon social-icon__style-03" href="{{team.twiter}}"><i class="social-icon__icon fa fa-twitter"></i>
+																	</a><!-- End / social-icon -->
+																	{% endif %}
+																	{% if team.gmail %}
+																	<!-- social-icon -->
+																	<a class="social-icon social-icon__style-03" href="{{team.gmail}}"><i class="social-icon__icon fa fa-google"></i>
+																	</a><!-- End / social-icon -->
+																	{% endif %}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="team__body">
+										<div class="team__user">
+											<h4 class="team__name">{{team.name}}</h4><span class="team__work">{{team.activity}}</span>
+										</div>
+										<p class="team__text">{{team.info}}</p>
+									</div>
+								</div><!-- End / team -->
+								
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="md-section" id="id7" style="background-color:#fff;padding:60px 0 0;">
+					<div class="row">
+						<div class="col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-2 ">
+							
+							<!-- sec-title -->
+							<div class="sec-title sec-title__lg-title md-text-center">
+								<h2 class="sec-title__title">Bog'lanish</h2><span class="sec-title__divider"></span>
+							</div><!-- End / sec-title -->
+							
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-9  col-lg-push-3">
+								<div class="main-content">
+									<div class="row"> 
+										<div class="col-lg-6 ">
+											<form action="{% url 'contact_create' %}" class="contact-form" method="post">
+												{% csrf_token %}
+												<!-- form-item -->
+												<div class="form-item">
+													<input class="form-control" type="text" name="Ism" id="Ism" placeholder="Ism"/>
+												</div><!-- End / form-item -->
+												
+												
+												
+												<!-- form-item -->
+												<div class="form-item">
+													<input class="form-control" type="text" name="Telefon" id="Telefon" placeholder="Telefon"/>
+												</div><!-- End / form-item -->
+												
+												
+												<!-- form-item -->
+												<div class="form-item">
+													<input class="form-control" type="text" name="Mavzu" id="Mavzu" placeholder="Mavzu"/>
+												</div><!-- End / form-item -->
+												
+												
+												<!-- form-item -->
+												<div class="form-item">
+													<textarea name="Xabar" id="Xabar" placeholder="Xabar" style="height: 150px;"></textarea>
+												</div><!-- End / form-item -->
+												
+												<button class="btn btn-primary btn-round mb-30" type="submit">Yuborish</button>
+											</form>
+										</div>
+										<div class="col-lg-6 ">
+											<div class="contact-gmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191885.73126917367!2d68.96752737418778!3d41.28243479015788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2z0KLQsNGI0LrQtdC90YIsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2sus!4v1720851010521!5m2!1sru!2sus" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3  col-lg-pull-9">
+								<div class="sidebar">
+									
+									<!-- widget -->
+									<section class="widget">
+										
+										<!-- sec-title -->
+										<div class="sec-title">
+											<h2 class="sec-title__title">ish vaqti</h2><span class="sec-title__divider"></span>
+										</div><!-- End / sec-title -->
+										
+										<p class="mb-30">{{workings.info}}</p>
+										
+										<!--  -->
+										<div>
+											<div class="widget-contact__item"><span class="widget-contact__title">Tel:</span>
+												<p class="widget-contact__text">{{workings.phone}}</p>
+											</div>
+											<div class="widget-contact__item"><span class="widget-contact__title">email:</span>
+												<p class="widget-contact__text"><a href="#">{{workings.email}}</a></p>
+											</div>
+											<div class="widget-contact__item"><span class="widget-contact__title">ish vaqti</span>
+												<p class="widget-contact__text">{{workings.aweek}} {{workings.hour1}}-{{workings.hour1}}</p>
+											</div>
+										</div><!-- End /   -->
+										
+									</section><!-- End / widget -->
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+			</div>
+			<!-- End / Content-->
+			
+		</div>
+		<!-- Vendors-->
+		<script type="text/javascript" src="{% static 'vendors/jquery/jquery.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendors/imagesloaded/imagesloaded.pkgd.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendors/isotope-layout/isotope.pkgd.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendors/jquery.matchHeight/jquery.matchHeight.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendors/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendors/masonry-layout/masonry.pkgd.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendors/swiper/swiper.jquery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendors/jquery-one-page/jquery.nav.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendors/menu/menu.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendors/jquery.waypoints/jquery.waypoints.min.js' %}"></script>
+		<!-- App-->
+		<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+	</body>
+</html>
